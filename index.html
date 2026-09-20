@@ -48,7 +48,15 @@
 <div id="overlay" class="overlay" onclick="if(event.target===this)closeCart()"><div class="drawer"><div style="display:flex;justify-content:space-between"><h2>Your cart</h2><button class="btn light" onclick="closeCart()">✕</button></div><div id="cartItems"></div><div id="cartTotal"></div></div></div>
 <div id="modal" class="modal"><div class="modalBox"><div class="modalHead"><h2 id="mtitle">TEGVA</h2><button class="btn light" onclick="closeModal()">✕</button></div><div id="mbody"></div></div></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
+const SUPABASE_URL = "https://ffbnysvupuxdkcuxwdex.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_tb8y9AgV7iWhzbzMGGcETA_Xkg8ISBg";
+
+const supabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
 const P=[
 [1,"Classic Sneakers","StepUp Footwear","Shoes",18500,"👟","Lagos","4.8"],
 [2,"Body Wave Human Hair","Glow Hair Studio","Hair",85000,"💇🏽‍♀️","Abuja","4.9"],
