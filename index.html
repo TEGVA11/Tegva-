@@ -45,8 +45,7 @@
 <script>
 const SUPABASE_URL="https://ffbnysvupuxdkcuxwdex.supabase.co";
 const SUPABASE_PUBLISHABLE_KEY="sb_publishable_tb8y9AgV7iWhzbzMGGcETA_Xkg8ISBg";
-const supabase=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
-
+const supabase=window.supabase?window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY):null;
 const P=[
 [1,"Classic Sneakers","StepUp Footwear","Shoes",18500,"👟","Lagos","4.8"],
 [2,"Body Wave Human Hair","Glow Hair Studio","Hair",85000,"💇🏽‍♀️","Abuja","4.9"],
