@@ -89,7 +89,8 @@ function checkout(){openModal("Checkout",'<form class="form" onsubmit="event.pre
 function openModal(t,b){document.getElementById("mtitle").textContent=t;document.getElementById("mbody").innerHTML=b;document.getElementById("modal").classList.add("show")}
 function closeModal(){document.getElementById("modal").classList.remove("show")}
 function toast(x){let t=document.createElement("div");t.textContent=x;t.style.cssText="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#101828;color:white;padding:12px 18px;border-radius:10px;z-index:100;font-size:13px";document.body.appendChild(t);setTimeout(()=>t.remove(),1500)}
-async function saveSeller(f){
+async function saveSeller(f){ 
+if(!supabase){alert("Seller setup is temporarily unavailable. Please try again.");return}  
 const inputs=f.querySelectorAll("input");
 const {error}=await supabase.from("sellers").insert([{business_name:inputs[0].value,owner_name:inputs[1].value,phone:inputs[2].value,email:inputs[3].value}]);
 if(error){alert("Could not create seller account: "+error.message);return}
